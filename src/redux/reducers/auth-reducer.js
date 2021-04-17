@@ -4,11 +4,11 @@ const SET_USER = 'auth/SET_USER'
 
 let initialState = {
   data: {
-    id: null,
-    login: null,
-    email: null
+    id: 1,
+    login: 'testLogin',
+    email: 'test-email@gmail.com'
   },
-  isAuth: false
+  isAuth: true
 }
 
 export const authReducer = (state = initialState, action) => {
