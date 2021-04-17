@@ -1,12 +1,21 @@
 import React from 'react';
 import MyVisits from './MyVisits';
+import {connect} from 'react-redux';
 
-const MyVisitsContainer = (props) => {
-  return (
-    <div>
-      <MyVisits />
-    </div>
-  )
+class MyVisitsContainer extends React.Component {
+  render() {
+    return (
+      <div>
+        <MyVisits {...this.props} />
+      </div>
+    )
+  }
 }
 
-export default MyVisitsContainer
+const mapStateToProps = (state) => {
+  return {
+    visits: state.profile.visits
+  }
+}
+
+export default connect(mapStateToProps,{})(MyVisitsContainer)

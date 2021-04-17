@@ -35,6 +35,17 @@ const initialState = {
         avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
         specialty: 'Терапевтическое отделение'
       }
+    },
+    {
+      id: 2,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Базаров Х.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Вышибала'
+      }
     }
   ]
 }

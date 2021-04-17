@@ -1,0 +1,13 @@
+.avatarWrapper {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.doctorFullName {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+.doctorSpecialty {
+    color: #EBE7FF;
+}

@@ -1,9 +1,12 @@
 import React from 'react';
+import {ElectronicCard} from './ElectronicCard';
+import {DoctorVisits} from './DoctorVisits/DoctorVisits';
 
-const Profile = (props) => {
+const Profile = ({visits}) => {
   return (
     <div>
-      Profile
+      <DoctorVisits visits={visits}/>
+      <ElectronicCard />
     </div>
   )
 }

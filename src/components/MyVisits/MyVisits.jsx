@@ -1,9 +1,10 @@
 import React from 'react';
+import VisitInfo from '../Profile/DoctorVisits/VisitInfo';
 
 const MyVisits = (props) => {
   return (
     <div>
-      MyVisits
+      <VisitInfo visits={props.visits}/>
     </div>
   )
 }
