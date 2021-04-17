@@ -1,12 +1,21 @@
 import React from 'react';
 import Header from './Header';
+import {connect} from 'react-redux';
 
-const HeaderContainer = (props) => {
-  return (
-    <div>
-      <Header />
-    </div>
-  )
+class HeaderContainer extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header {...this.props} />
+      </div>
+    )
+  }
 }
 
-export default HeaderContainer
+const mapStateToProps = (state) => {
+  return {
+    userData: state.profile.userData
+  }
+}
+
+export default connect(mapStateToProps,{})(HeaderContainer)

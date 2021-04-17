@@ -11,7 +11,7 @@ const initialState = {
     fullName: 'Ваше имя',
     age: 22,
     description: 'Немного о себе',
-    photos: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg'
+    photos: 'https://sun9-22.userapi.com/impg/vWCzJc4xHJ4pIR9jnEmu_jy2iGOQJBzdEZMg7g/lvYuydM9ZKU.jpg?size=845x280&quality=96&proxy=1&sign=23eda5f03474d4b130759a0f4629883e&type=album'
   },
   visits: [
     {
@@ -45,6 +45,17 @@ const initialState = {
         fullName: 'Базаров Х.',
         avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
         specialty: 'Вышибала'
+      }
+    },
+    {
+      id: 3,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Урология'
       }
     }
   ]
