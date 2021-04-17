@@ -2,17 +2,20 @@ import {profileAPI} from '../../api/api';
 
 const GET_USER_DATA = 'profile/GET_USER_DATA'
 const GET_VISITS = 'profile/GET_VISITS'
+const GET_MORE_VISITS = 'profile/GET_MORE_VISITS'
 const SET_CANCEL_VISIT = 'profile/SET_CANCEL_VISIT'
 
 const initialState = {
   userData: {
-    userId: 1,
+    userId: 0,
     fullName: 'Ваше имя',
     age: 22,
-    description: 'Немного о себе'
+    description: 'Немного о себе',
+    photos: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg'
   },
   visits: [
     {
+      id: 0,
       date: '2019-01-25 14:06:00.000Z',
       hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
       hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -23,6 +26,7 @@ const initialState = {
       }
     },
     {
+      id: 1,
       date: '2019-01-25 14:06:00.000Z',
       hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
       hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
@@ -42,19 +46,48 @@ export const profileReducer = (state = initialState , action) => {
         ...state,
         userData: action.userData
       }
-    case GET_VISITS:
+    case GET_VISITS: // запрашиваем информацию о записи на прием
       return {
-        ...state
+        ...state,
+        visits: action.visits
+      }
+    case GET_MORE_VISITS: // в зависимости от API можно сделать подгрузку записей к врачу к уже существующим
+      return {
+        ...state,
+        visits: [...state.visits, action.visits]
+      }
+    case SET_CANCEL_VISIT:
+      return {
+        ...state,
+        visits: state.visits.splice(action.visitId, 1) // гениальное решение удаление элемента из массива
+        // в теории сломаться не должно
       }
     default:
       return state
   }
 }
 
-const getUserDataAC = (userData) => ({type: GET_USER_DATA, userData})
+const getUserDataAC = (userData) => ({type: GET_USER_DATA, userData })
+const getVisitsAC = (visits) => ({type: GET_VISITS, visits })
+const getMoreVisitsAC = (visits) => ({ type: GET_MORE_VISITS, visits })
+const setCancelVisitAC = (visitId) => ({ type: SET_CANCEL_VISIT, visitId })
+
 
 export const getUserDataTC = (userId) => async (dispatch) => {
-  const res = await profileAPI.getUserData(userId)
+  const res = await profileAPI.getUserData(userId) // забираем с API-шки информацию о себе для дальнейшего использования
   dispatch(getUserDataAC(res.userData))
 }
-
+export const getVisitsTC = (userId) => async (dispatch) => {
+  const res = await profileAPI.getVisits(userId) // подгружаем записи на прием для отображения
+  dispatch(getVisitsAC(res.visits))
+}
+export const getMoreVisitsTC = (userId) => async (dispatch) => {
+  const res = await profileAPI.getVisits((userId, 10)) //предполагаем , что больше 10 записей к врачу быть не может.
+  dispatch(getMoreVisitsAC(res.visits)) // Возможно изменю данное число и подумаю как его сделать.
+}
+export const setCancelVisitTC = (visitId) => async (dispatch) => {
+  const res = await profileAPI.setCancelVisit(visitId)
+  if (res.resultCode === 0) { // всё делается под воображаемую API. на реальных примерах вложенность может отличаться
+    dispatch(setCancelVisitAC(visitId))
+  }
+}

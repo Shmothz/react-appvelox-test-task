@@ -12,13 +12,13 @@ export const profileAPI = {
   getUserData(userId) {
     return instance.get(`profile/${userId}`);
   },
-  getAppointment(userId, visitsOnPage = 2 ) {
+  getVisits(userId, visitsOnPage = 2 ) {
     return instance
       .get(`profile/visits/${userId}?visitsOnPage=${visitsOnPage}`)
       .then((response) => response.data);
   },
   setCancelVisit(visitId) {
-    return instance.delete(`follow/${visitId}`);
+    return instance.delete(`profile/visits/${visitId}`);
   }
 };
 
