@@ -1,4 +1,4 @@
-import {loginAPI} from '../api/api';
+import {loginAPI} from '../../api/api';
 
 const SET_USER = 'auth/SET_USER'
 
