@@ -8,10 +8,10 @@ import {compose} from 'redux';
 import {connect} from 'react-redux';
 
 function App() {
-  return <div>
+  return <div className={'appWrapper'}>
     <NavigationContainer />
     <HeaderContainer />
-    <div>
+    <div className={'contentWrapper'}>
       <Route exact path='/profile' render={() => <ProfileContainer />} />
       <Route path='/profile/visits' render={() => <MyVisitsContainer />} />
     </div>

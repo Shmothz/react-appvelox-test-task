@@ -1,5 +1,22 @@
 .navWrapper {
+    grid-area: n;
     background-color: #003B72;
 }
+.logo {
+    padding: 18px;
+    color: white;
+}
 .linkWrapper {
+}
+.activeLink {
+    background-color: black;
+}
+.logoImg {
+    height: 20px;
+    padding-top: 6px;
+    padding-left: 20px;
+    padding-bottom: 16px;
+}
+.footer {
+    margin-top: 535px;
 }

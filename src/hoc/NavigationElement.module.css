@@ -1,0 +1,23 @@
+.elementWrapper {
+    padding: 14px;
+}
+.elementImg {
+    width: 18px;
+}
+.elementText {
+    margin-left: 14px;
+    color: white;
+}
+.notActive {
+    background-color: inherit;
+}
+.active {
+    padding: 14px;
+    background-color: white;
+}
+.active .elementText {
+    color: #7761FF;
+}
+a {
+    text-decoration: none;
+}
