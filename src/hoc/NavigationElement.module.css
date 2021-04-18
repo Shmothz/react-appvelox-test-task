@@ -1,4 +1,6 @@
 .elementWrapper {
+    display: flex;
+    align-items: center;
     padding: 14px;
 }
 .elementImg {
@@ -12,8 +14,8 @@
     background-color: inherit;
 }
 .active {
-    padding: 14px;
     background-color: white;
+    border-left: 3px solid #7761FF;
 }
 .active .elementText {
     color: #7761FF;
