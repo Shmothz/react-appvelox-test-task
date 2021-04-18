@@ -1,8 +1,28 @@
 .avatar {
+    cursor: pointer;
     border-radius: 50%;
     width: 45px;
     height: 45px;
 }
 .headerWrapper {
+    padding: 12px 40px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #50CAFF;
     grid-area: h;
+}
+.headerTitle {
+    color: white;
+    font-size: 28px;
+    line-height: 33px;
+}
+.imgNotAvatar {
+    width: 18px;
+    cursor: pointer;
+}
+.rightSideMenuWrapper {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
