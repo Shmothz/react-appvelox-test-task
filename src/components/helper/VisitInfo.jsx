@@ -1,16 +1,20 @@
 import styles from '../Profile/DoctorVisits/DoctorVisits.module.css';
 import React from 'react';
+import {format} from 'date-fns'
+import ru from "date-fns/locale/ru";
 
 const VisitInfo = ({visits, totalCountVisit, setCancelVisitTC}) => {
 
   const cancelVisit = () => {
-    setCancelVisitTC()
+    setCancelVisitTC() // при клике должна удаляться запись к врачу с сервера и обновляться список записей.
   }
 
   return (
     <>
       {visits.slice(0, totalCountVisit).map(i => <div key={i.id} className={styles.visitInfoTab}>
-          <span className={styles.tabDate}>{i.date}</span>
+          <span className={styles.tabDate}>{
+            format(new Date(i.date),'EEEE dd.MM.yyyy | HH:mm', {locale: ru})
+          }</span>
           <span className={styles.tabHospitalName}>{i.hospitalName}</span>
           <span className={styles.tabHospitalAddress}>{i.hospitalAddress}</span>
           <div className={styles.tabDoctorWrapper}>

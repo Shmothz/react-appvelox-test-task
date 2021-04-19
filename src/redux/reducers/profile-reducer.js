@@ -16,7 +16,7 @@ const initialState = {
   visits: [
     {
       id: 0,
-      date: '2019-01-25 14:06:00.000Z',
+      date: '2012-04-23T18:25:43.511Z',
       hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
       hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
       doctor: {
