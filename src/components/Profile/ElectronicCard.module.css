@@ -1,0 +1,50 @@
+.electronicCardTitle {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 15px 20px;
+    margin: 0;
+}
+.electronicCardWrapper {
+    padding: 20px;
+}
+.tabsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.electronicCardTab {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #EBE7FF;
+    width: 540px;
+    height: 180px;
+    display: flex;
+}
+.electronicCardTab:first-child {
+    border: 2px solid #50CAFF;
+}
+.electronicCardTab img {
+    height: 50px;
+    padding: 66px 46px;
+}
+.electronicCardTab:first-child img {
+    border-radius: 5px 0px 0px 5px;
+    background-color: #50CAFF;
+}
+.tabTextWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: flex-start;*/
+    /*align-items: flex-start;*/
+}
+.tabTitle {
+    font-size: 28px;
+    line-height: 33px;
+    margin: 0 auto 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #50CAFF;
+}
