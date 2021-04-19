@@ -12,6 +12,7 @@
 }
 .visitsInfoWrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
 }
 .moreVisitsWrapper {
@@ -19,7 +20,9 @@
     padding: 70px 0;
 }
 .visitInfoTab {
+    position: relative;
     margin-right: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px #EBE7FF;
     padding: 20px;
@@ -62,4 +65,17 @@
 }
 .doctorSpecialty {
     color: #EBE7FF;
+}
+.cancelBtn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: #7761FF;
+    border-radius: 5px;
+    color:white;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
 }

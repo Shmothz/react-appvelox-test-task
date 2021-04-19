@@ -1,0 +1,45 @@
+.myVisitsBackBtn {
+    padding: 11px 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.myVisitsBackBtn span {
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 19px;
+}
+.visitInfoWrapper {
+    width: 500px;
+    height: 826px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 20px 0px;
+}
+::-webkit-scrollbar-button {
+    background-repeat: no-repeat;
+    width: 10px;
+    height:0px
+}
+
+::-webkit-scrollbar-track {
+    background-color: #EBE7FF;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 5px;
+    background-color: #003B72;
+}
+
+::-webkit-resizer{
+    background-repeat:no-repeat;
+    width: 10px;
+    height:0px
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}

@@ -2,10 +2,10 @@ import React from 'react';
 import {ElectronicCard} from './ElectronicCard';
 import {DoctorVisits} from './DoctorVisits/DoctorVisits';
 
-const Profile = ({visits}) => {
+const Profile = ({visits, setCancelVisitTC}) => {
   return (
     <div>
-      <DoctorVisits visits={visits}/>
+      <DoctorVisits visits={visits} setCancelVisitTC={setCancelVisitTC} />
       <ElectronicCard />
     </div>
   )

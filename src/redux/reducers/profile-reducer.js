@@ -57,6 +57,61 @@ const initialState = {
         avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
         specialty: 'Урология'
       }
+    },
+    {
+      id: 4,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Урология'
+      }
+    },
+    {
+      id: 5,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Ортопедия'
+      }
+    },
+    {
+      id: 6,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Урология'
+      }
+    },
+    {
+      id: 7,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Урология'
+      }
+    },
+    {
+      id: 8,
+      date: '2019-01-25 14:06:00.000Z',
+      hospitalName: 'СПБ ГБУЗ "Городская поликлиника №25"',
+      hospitalAddress: 'пр. Солидарности, д. 1, к. 1, лит. А',
+      doctor: {
+        fullName: 'Добротин В.У.',
+        avatar: 'https://i.pinimg.com/originals/04/3a/0d/043a0d88931ce037b081f1606ccbda09.jpg',
+        specialty: 'Урология'
+      }
     }
   ]
 }

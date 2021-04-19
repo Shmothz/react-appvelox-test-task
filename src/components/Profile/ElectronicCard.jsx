@@ -16,7 +16,7 @@ export function ElectronicCard() {
           <img src={userInfo} alt={'userInfo'}/>
           <div className={styles.tabTextWrapper}>
             <h3 className={styles.tabTitle}>Информация о пациенте</h3>
-            <ul className={styles.tabText}>
+            <ul>
               <li>Ваши личные данные</li>
               <li>Рекомендации врачей</li>
               <li>История болезней</li>
@@ -25,23 +25,23 @@ export function ElectronicCard() {
         </div>
         <div className={styles.electronicCardTab}>
           <img src={analysis} alt={'analysis'}/>
-          <div>
-            <h3>Результаты анализов</h3>
-            <span>Вы можете узнать здесь результаты своих анализов</span>
+          <div className={styles.tabTextWrapper}>
+            <h3 className={styles.tabTitle}>Результаты анализов</h3>
+            <span className={styles.tabText}>Вы можете узнать здесь результаты своих анализов</span>
           </div>
         </div>
         <div className={styles.electronicCardTab}>
           <img src={addInfo} alt={'addInfo'}/>
-          <div>
-            <h3>Добавить информацию</h3>
-            <span>Добавляйте в свою электронную медицинскую карту новые данные</span>
+          <div className={styles.tabTextWrapper}>
+            <h3 className={styles.tabTitle}>Добавить информацию</h3>
+            <span className={styles.tabText}>Добавляйте в свою электронную медицинскую карту новые данные</span>
           </div>
         </div>
         <div className={styles.electronicCardTab}>
           <img src={history} alt={'history'}/>
-          <div>
-            <h3>История приемов</h3>
-            <span>Вся информация о полученных услугах за все время хранится здесь</span>
+          <div className={styles.tabTextWrapper}>
+            <h3 className={styles.tabTitle}>История приемов</h3>
+            <span className={styles.tabText}>Вся информация о полученных услугах за все время хранится здесь</span>
           </div>
         </div>
       </div>

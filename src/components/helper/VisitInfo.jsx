@@ -1,7 +1,12 @@
 import styles from '../Profile/DoctorVisits/DoctorVisits.module.css';
 import React from 'react';
 
-const VisitInfo = ({visits, totalCountVisit}) => {
+const VisitInfo = ({visits, totalCountVisit, setCancelVisitTC}) => {
+
+  const cancelVisit = () => {
+    setCancelVisitTC()
+  }
+
   return (
     <>
       {visits.slice(0, totalCountVisit).map(i => <div key={i.id} className={styles.visitInfoTab}>
@@ -15,6 +20,7 @@ const VisitInfo = ({visits, totalCountVisit}) => {
               <div className={styles.doctorSpecialty}>{i.doctor.specialty}</div>
             </div>
           </div>
+          <button onClick={cancelVisit} className={styles.cancelBtn}>Отменить</button>
         </div>
       )}
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from './Profile';
 import {connect} from 'react-redux';
+import {setCancelVisitTC} from '../../redux/reducers/profile-reducer';
 
 class ProfileContainer extends React.Component {
   render() {
@@ -19,4 +20,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,{})(ProfileContainer)
+export default connect(mapStateToProps,{setCancelVisitTC})(ProfileContainer)
