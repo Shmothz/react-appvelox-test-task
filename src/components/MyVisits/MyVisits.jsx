@@ -3,6 +3,7 @@ import VisitInfo from '../helper/VisitInfo';
 import {NavLink} from 'react-router-dom';
 import Arrow from '../../common/images/Vector.png'
 import styles from './MyVisits.module.css'
+import CalendarContainer from '../helper/CalendarContainer.jsx';
 
 const MyVisits = (props) => {
   return (
@@ -13,8 +14,11 @@ const MyVisits = (props) => {
           <span>Мои записи</span>
         </div>
       </NavLink>
-      <div className={styles.visitInfoWrapper}>
-        <VisitInfo visits={props.visits} totalCountVisit={10}/>
+      <div className={styles.contentWrapper}>
+        <div className={styles.visitInfoWrapper}>
+          <VisitInfo visits={props.visits} totalCountVisit={10}/>
+        </div>
+        <CalendarContainer />
       </div>
     </div>
   )
