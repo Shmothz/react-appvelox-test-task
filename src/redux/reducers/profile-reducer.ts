@@ -5,6 +5,30 @@ const GET_VISITS = 'profile/GET_VISITS'
 const GET_MORE_VISITS = 'profile/GET_MORE_VISITS'
 const SET_CANCEL_VISIT = 'profile/SET_CANCEL_VISIT'
 
+type UserDataType = {
+  userId: number | null
+  fullName: string | null
+  age: number | null
+  description: string | null
+  photos: string | null
+}
+type DoctorType = {
+  fullName: string
+  avatar: string
+  specialty: string
+}
+type VisitType = {
+  id: number 
+  date: string
+  hospitalName: string
+  hospitalAddress: string
+  doctor: DoctorType
+}
+type InitialStateType = {
+  userData: UserDataType
+  visits: Array<VisitType>
+}
+
 const initialState = {
   userData: {
     userId: 0,
@@ -116,7 +140,7 @@ const initialState = {
   ]
 }
 
-export const profileReducer = (state = initialState , action) => {
+export const profileReducer = (state = initialState , action: any): InitialStateType => {
   switch (action.type) {
     case GET_USER_DATA:
       return {
@@ -144,25 +168,41 @@ export const profileReducer = (state = initialState , action) => {
   }
 }
 
-const getUserDataAC = (userData) => ({type: GET_USER_DATA, userData })
-const getVisitsAC = (visits) => ({type: GET_VISITS, visits })
-const getMoreVisitsAC = (visits) => ({ type: GET_MORE_VISITS, visits })
-const setCancelVisitAC = (visitId) => ({ type: SET_CANCEL_VISIT, visitId })
+type GetUserDataActionType = {
+  type: typeof GET_USER_DATA
+  userData: UserDataType
+}
+type GetVisitsActionType = {
+  type: typeof GET_VISITS
+  visits: Array<VisitType>
+}
+type GetMoreVisitsActionType = {
+  type: typeof GET_MORE_VISITS
+  visits: Array<VisitType>
+}
+type SetCancelVisitActionType = {
+  type: typeof SET_CANCEL_VISIT
+  visitId: number
+}
+const getUserDataAC = (userData: UserDataType): GetUserDataActionType => ({type: GET_USER_DATA, userData })
+const getVisitsAC = (visits: Array<VisitType>): GetVisitsActionType => ({type: GET_VISITS, visits })
+const getMoreVisitsAC = (visits: Array<VisitType>): GetMoreVisitsActionType => ({ type: GET_MORE_VISITS, visits })
+const setCancelVisitAC = (visitId: number): SetCancelVisitActionType => ({ type: SET_CANCEL_VISIT, visitId })
 
 
-export const getUserDataTC = (userId) => async (dispatch) => {
+export const getUserDataTC = (userId: number) => async (dispatch: any) => {
   const res = await profileAPI.getUserData(userId) // забираем с API-шки информацию о себе для дальнейшего использования
   dispatch(getUserDataAC(res.userData))
 }
-export const getVisitsTC = (userId) => async (dispatch) => {
+export const getVisitsTC = (userId: number) => async (dispatch: any) => {
   const res = await profileAPI.getVisits(userId) // подгружаем записи на прием для отображения
   dispatch(getVisitsAC(res.visits))
 }
-export const getMoreVisitsTC = (userId) => async (dispatch) => {
+export const getMoreVisitsTC = (userId: number) => async (dispatch: any) => {
   const res = await profileAPI.getVisits((userId, 10)) //предполагаем , что больше 10 записей к врачу быть не может.
   dispatch(getMoreVisitsAC(res.visits)) // Возможно изменю данное число и подумаю как его сделать.
 }
-export const setCancelVisitTC = (visitId) => async (dispatch) => {
+export const setCancelVisitTC = (visitId: number) => async (dispatch: any) => {
   const res = await profileAPI.setCancelVisit(visitId)
   if (res.resultCode === 0) { // всё делается под воображаемую API. на реальных примерах вложенность может отличаться
     dispatch(setCancelVisitAC(visitId))
